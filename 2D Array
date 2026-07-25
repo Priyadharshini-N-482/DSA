@@ -1,0 +1,253 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    //Scanner sc=new Scanner(System.in);
+		/**** 1.Getting input from user and print it:****
+		int[][] arr=new int[3][3];
+		for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        arr[i][j]=sc.nextInt();
+		    }
+		}
+		for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+		Input: 1 2 3 4 5 6 7 8 9
+		output: 1 2 3
+		        4 5 6
+		        7 8 9
+		 ****/
+		 
+		/**** 2.Direct values assigning method in 2D Array :****
+		int[][] arr={{1,1,1},{2,2,2},{3,3,3}};  
+		      //or 
+		int[][] arr=new int[3][3];
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+		output:1 1 1
+		       2 2 2
+		       3 3 3
+		 ****/
+		 /****3. Default values of 2D Array before assigning values is 0.****
+		 int[][] arr=new int[3][3];
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+		output:0 0 0
+		       0 0 0
+		       0 0 0
+		****/
+		/****4.Sum of the 2D Array:****
+		int[][] arr=new int[3][3];
+		int sum=0;
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        sum+=arr[i][j];
+		    }
+		}
+		System.out.println(sum);
+		
+		output: 18
+		****/
+		/**** 5.Maximum element in 2D Array:****
+		int[][] arr=new int[3][3];
+		int m=0;
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        m=Math.max(m,arr[i][j]);
+		    }
+		}
+		System.out.println(m);
+		output:3
+		****/
+		/**** 6.Find the row with Maximum sum.****
+		int[][] arr=new int[3][3];
+		int m=Integer.MIN_VALUE;
+		int sum=0;
+		int ans=0;
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		 for(int i=0;i<arr.length;i++){
+		     sum=0;
+		    for(int j=0;j<arr[0].length;j++){
+		        sum+=arr[i][j];
+		    }
+		    if(m<sum){
+		        m=sum;
+		        ans= i;
+		    }
+		}
+		System.out.println(ans);
+		output: 2
+		****/
+		/**** 7. Print the element in column wise.****
+	    // here we can use arr[j][i] for only nxn matrix.
+	    if use it for nxm matrix it gives index out of bound error.//
+		int[][] arr=new int[3][3];
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[j][i]+" ");
+		    }
+		    System.out.println();
+		 }
+		    output:1 2 3
+		           1 2 3
+		           1 2 3
+		  ****/
+		  /**** Error while using arr[j][i] for nxm matrix.
+		   int[][] arr=new int[3][2];
+		arr=new int[][]{{1,1},{2,2},{3,3}};
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[j][i]+" ");
+		    }
+		    System.out.println();
+		 }
+		 
+		    output: Index 2 out of bounds for length 2----because the original arr is 3x2 while we give arr[j][j]
+		    the arr become 2x3.2----
+		    *****/
+		    /*** print array in column wise- nxm matrix:
+		   int[][] arr=new int[3][2];
+		arr=new int[][]{{1,1},{2,2},{3,3}};
+		 for(int j=0;j<arr[0].length;j++){
+		    for(int i=0;i<arr.length;i++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		 }
+		 output:1 2 3
+		        1 2 3
+		 Column-wise: column loop outside, row loop inside, but always access the array as arr[row][column].
+		 ****/
+		 /**** 8. Print Matrix in snake pattern.****
+		 int[][] arr=new int[3][3];
+		 arr=new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+		 for(int i=0;i<arr.length;i++){
+		    if(i%2==0){
+		        for(int j=0;j<arr[0].length;j++){
+		            System.out.print(arr[i][j]+" ");
+		    }
+		    }
+		    else{
+		         for(int j=arr[0].length-1;j>=0;j--){
+		             System.out.print(arr[i][j]+" ");
+		         }
+		     }
+		     System.out.println();
+		 }
+		 output:1 2 3
+		        6 5 4
+		        7 8 9
+		 ****/
+		 /**** 9.Transpose Matrix:
+		 ------Printing Transpose Matrix:Hint arr[j][i]-----
+		 int[][] arr=new int[3][3];
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[j][i]+" ");
+		    }
+		    System.out.println();
+		}
+		output:1 2 3
+		       1 2 3
+		       1 2 3
+		------change the given matrix into transpose: using extra space----
+		int[][] arr=new int[3][3];
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		int[][] brr= new int[arr.length][arr[0].length];
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        brr[j][i]=arr[i][j];
+		    }
+		}
+		for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        arr[i][j]=brr[i][j];
+		    }
+		}
+		for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+		output:1 2 3
+		       1 2 3 
+		       1 2 3 
+		       
+		here 1st we create brr which is used  to do store transpose matrix value , then the valuse of brr copies
+		to arr. herer we are using extra space.
+		****/
+		/****----Inplace Method - without using extra space.------
+		int[][] arr=new int[3][3];
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<i;j++){
+		        int t=arr[i][j];
+		        arr[i][j]=arr[j][i];
+		        arr[j][i]=t;
+		    }
+		}
+		for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+		output: 1 2 3 
+		        1 2 3 
+		        1 2 3 
+		 here we are using for loop condition as tringle and swap with upper tringle.
+		 *****/
+		 /****10. Rotate by 90 degree.****
+		  Hint: first transpose the matrix then  reverse row.
+		 int[][] arr=new int[3][3];
+		arr=new int[][]{{1,1,1},{2,2,2},{3,3,3}};
+		for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<i;j++){
+		        int t=arr[i][j];
+		        arr[i][j]=arr[j][i];
+		        arr[j][i]=t;
+		    }
+		}
+		for(int i=0;i<arr.length;i++){
+		    int sc=0,ec=arr[0].length-1;
+		    while(sc<ec){
+		        int te=arr[i][sc];
+		        arr[i][sc]=arr[i][ec];
+		        arr[i][ec]=te;
+		        sc++;
+		        ec--;
+		    }
+		}
+		 for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		} 
+		output:3 2 1 
+		       3 2 1
+		       3 2 1
+		90° Clockwise = Transpose + Reverse Rows
+        90° Anti-Clockwise = Transpose + Reverse Columns
+        180° = Reverse Rows + Reverse Columns
+		****/
+	}
+}
