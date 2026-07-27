@@ -249,5 +249,131 @@ public class Main
         90° Anti-Clockwise = Transpose + Reverse Columns
         180° = Reverse Rows + Reverse Columns
 		****/
+       	/**** 11. Find the minimum element out of all the maximum element of each row ****
+		int[][] arr=new int[3][3];
+		int[] a=new int[arr.length];
+		int m=0;
+		int min=Integer.MAX_VALUE;
+		arr=new int[][]{{1,2,3},{4,5,6},{7,8,0}};
+		 for(int i=0;i<arr.length;i++){
+		     m=0;
+		    for(int j=0;j<arr[0].length;j++){
+		        m=Math.max(m,arr[i][j]);
+		    }
+		    a[i]=m;
+		}
+		for(int i=0;i<arr.length;i++){
+		    min=Math.min(min,a[i]);
+		}
+		System.out.println(min);
+		output: 3 
+		****/
+		/**** 12. Snake pattern Column-wise ****
+		int[][] arr=new int[3][3];
+		arr=new int[][]{{1,2,3},{4,5,6},{7,8,0}};
+		for(int j=0;j<arr[0].length;j++){
+		    if(j%2==0){
+		        for(int i=0;i<arr.length;i++){
+		            System.out.print(arr[i][j]+" ");
+		        }
+		    }else{
+		        for(int i=arr.length-1;i>=0;i--){
+		            System.out.print(arr[i][j]+" ");
+		        }
+		    }
+		    System.out.println();
+		}
+		output: 1 4 7
+		        8 5 2 
+		        3 6 0 
+		 ****/
+		 /**** 13.Reverse the row of the matrix ,reverse the column of the matrix.**** 
+		 int[][] arr=new int[3][3];
+		arr=new int[][]{{1,2,3},{4,5,6},{7,8,0}};
+		for(int i=0;i<arr.length;i++){
+		        int r=arr[i].length-1;
+		        int l=0;
+		        while(l<r){
+		        int t=arr[i][l];
+		        arr[i][l]=arr[i][r];
+		        arr[i][r]=t;
+		        r--;
+		        l++;
+		    }
+		}
+		for(int i=0;i<arr[0].length;i++){
+		        int b=arr.length-1;
+		        int t=0;
+		        while(t<b){
+		        int temp=arr[t][i];
+		        arr[t][i]=arr[b][i];
+		        arr[b][i]=temp;
+		        t++;
+		        b--;
+		    }
+		}
+		for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+		output:0 8 7
+		       6 5 4
+		       3 2 1 
+	    ****/
+	    /**** 14.Spiral Matrix  *****  
+	public class Main{
+	public static void main(String[] args) {
+		int[][] arr={{1,2,3},{5,6,7},{9,0,10},{12,13,14}};
+		for(int i=0;i<arr.length;i++){
+		    for(int j=0;j<arr[0].length;j++){
+		        System.out.print(arr[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+		System.out.print("----Spiral Matrix----");
+		int fr=0,lr=arr.length-1,fc=0,lc=arr[0].length-1;
+		while(fr<=lr && fc<=lc){
+		    for(int j=fc;j<=lc;j++){    //right
+		        System.out.print(arr[fr][j]+" ");
+		    }
+		    fr++;
+		    if(fr>lr || fc>lc)break;
+		    for(int i=fr;i<=lr;i++){    //down
+		        System.out.print(arr[i][lc]+" ");
+		    }
+		    lc--;
+		    if(fr>lr || fc>lc)break;
+		    for(int j=lc;j>=fc;j--){    //left
+		        System.out.print(arr[lr][j]+" ");
+		    }
+		    lr--;
+		    if(fr>lr || fc>lc)break;
+            for(int i=lr;i>=fr;i--){    //up
+		        System.out.print(arr[i][fc]+" ");
+		    }
+		    fc++;
+		}
+	}
+}
+    output: 1 2 3 7 10 14 13 12 9 5 6 0 
+    ****/
+    /**** 15.Search in a row-column sorted matrix. *****
+    int[][] arr={{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
+    int t=17;
+    int a=0;
+    int i=0,j=arr[0].length-1;
+    while(j>=0&&i<arr.length){
+        if(arr[i][j]>t)j--;
+        else if(arr[i][j]<t)i++;
+        else{
+            a=1;break;
+        }
+    }
+    if(a==1)System.out.print("true");
+    else System.out.print("false");
+    output:true
+    *****/
 	}
 }
