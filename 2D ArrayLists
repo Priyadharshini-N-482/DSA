@@ -34,4 +34,47 @@ public class Main
         
 	}
 }
+--------------------- Pascal's Triangle -----------------
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+public class Main
+{
+	public static void main(String[] args) {
+	    /***-----Pascal's Triangle -----
+	    int n=5;
+	    List<List<Integer>>ans=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            ans.add(new ArrayList<Integer>());
+            for(int j=0;j<=i;j++){
+                if(j==0||j==i)ans.get(i).add(1);
+                else{
+                    int val=ans.get(i-1).get(j)+ans.get(i-1).get(j-1);
+                    ans.get(i).add(val);
+                }
+            }
+        }
+        System.out.println(ans);
+        output:[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+        ***/
+        /***-----Pascal Triangle-II------
+         // ------Given an integer rowIndex(n), return the rowIndexth (0-indexed) row of the Pascal's triangle.
+        int n=3;
+        List<List<Integer>>ans=new ArrayList<>();
+        for(int i=0;i<=n;i++){
+            ans.add(new ArrayList<Integer>());
+            for(int j=0;j<=i;j++){
+                if(j==0||j==i)ans.get(i).add(1);
+                else{
+                    int val=ans.get(i-1).get(j)+ans.get(i-1).get(j-1);
+                    ans.get(i).add(val);
+                }
+            }
+        }
+        System.out.println(ans.get(n));
+        output: [1,3,3,1]
+        ****/
+	}
+}
+
 
