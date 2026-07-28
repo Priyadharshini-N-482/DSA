@@ -1,5 +1,6 @@
 # DSA
-# 2D Array - 1.Getting input from user and print it.
+# 2D Array 
+             1.Getting input from user and print it.
              2.Direct values assigning method in 2D Array
              3.Default values of 2D Array before assigning values is 0.
              4.Sum of the 2D Array.
@@ -15,7 +16,18 @@
              14.Spiral Matrix
              15.Search in a row-column sorted matrix. 
              16.Matrix Multiplication.
-# 2D ArrayLists -
+# 2D ArrayLists 
+             1.Insert into 2D ArrayLists.
+             2.Getting particular element in 2D ArrayLists.
+             3.change the element in the 2D ArrayLists.
+             4.add element in 2D ArrayLists.
+             5.Adding new list in the 2D ArrayList.
+             6.Pascal’s Triangle 
+             7.Pascal’s Triangle -II
+
+
+
+
 
 
 
