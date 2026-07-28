@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+	public static void main(String[] args) {
+	    //----Insert into 2D ArrayLists---//
+		ArrayList<ArrayList<Integer>> ans=new ArrayList<>();
+		ArrayList<Integer>a=new ArrayList<>();
+		a.add(1);a.add(2);a.add(3);
+		ArrayList<Integer>b=new ArrayList<>();
+		b.add(7);b.add(9);b.add(8);
+        ArrayList<Integer>c=new ArrayList<>();
+		c.add(4);c.add(5);
+		ans.add(a);
+		ans.add(b);
+        ans.add(c);
+        System.out.println(ans);
+        /*** output:[[1,2,3],[7,9,8],[4,5]]***/
+        //----Getting particular element in 2D ArrayLists---//
+        System.out.println(ans.get(0).get(2));
+        /***output:3---0th row 2nd column---***/
+        //----change the element in the 2D ArrayLists---//
+        ans.get(0).set(1,7);
+        System.out.println(ans);
+        /***output:[[1,7,3],[7,9,8],[4,5]]***to change element first set the row then set the element*/
+        //----add element in 2D ArrayLists---//
+        ans.get(2).add(3);
+        System.out.println(ans.get(2));
+        /***output:[4,5,3]-add element in 3rd row*/
+        //----Adding new list in the 2D ArrayList----//
+        ans.add(new ArrayList<>(Arrays.asList(1, 2, 3)));//Arrays.asList(1, 2, 3) is a shortcut that creates a List containing the given elements.
+        System.out.println(ans);
+        /***output:[[1,7,3],[7,9,8],[4,5,3],[1,2,3]]***/
+        
+	}
+}
+
