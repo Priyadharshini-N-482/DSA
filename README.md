@@ -24,7 +24,12 @@
              5.Adding new list in the 2D ArrayList.
              6.Pascal’s Triangle 
              7.Pascal’s Triangle -II
-
+# Queue      
+             1.Traversal in Queue.
+             2.Adding element in particular index.
+             3.Peek Element At particular index.
+             4.Remove Element at particular index.
+             5.Reverse a queue.
 
 
 
