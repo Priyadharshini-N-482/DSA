@@ -1,0 +1,104 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+public class Main
+{
+    // ---------- Traversal in Queue ----------
+    public static void TraversalInQueue(Queue<Integer>q){
+        int n=q.size();
+        for(int i=1;i<=n;i++){
+            System.out.print(q.peek()+" ");
+            q.add(q.remove());
+        }
+    }
+    // ---------- Adding element in particular index ----------
+    public static void addAtIndex(Queue<Integer>q,int idex,int val){
+        if(idex<0||idex>q.size()){
+            System.out.println("Invalid");
+            return;
+        }
+        int n=q.size();
+        if(idex<n){
+            for(int i=0;i<idex;i++){
+                q.add(q.remove());
+            }
+            q.add(val);
+            for(int i=0;i<n-idex;i++){
+                q.add(q.remove());
+            }
+        }else{
+        q.add(val);}
+    }
+    // ---------- Peek Element At particular index ----------
+    public static void PeekAtIndex(Queue<Integer>q,int idex){
+        if(idex<0||idex>q.size()){
+            System.out.println("Invalid");
+        }
+        int n=q.size();
+        if(idex<n){
+            for(int i=0;i<idex;i++){
+                q.add(q.remove());
+            }
+            System.out.print(q.peek());
+            for(int i=0;i<n-idex;i++){
+                q.add(q.remove());
+            }
+        }
+    }
+    // ---------- Remove Element at particular index ----------
+    public static void RemoveAtIndex(Queue<Integer>q,int idex){
+        if(idex<0||idex>q.size()){
+            System.out.println("Invalid");
+        }
+        int n=q.size();
+        if(idex<n){
+            for(int i=0;i<idex;i++){
+                q.add(q.remove());
+            }
+            System.out.print("Removed Element="+q.remove());
+            for(int i=0;i<q.size()-idex;i++){
+                q.add(q.remove());
+            }
+        }
+    }
+    // ---------- Reverse a queue ----------
+    public static Queue<Integer> ReverseAQueue(Queue<Integer>q){
+        Stack<Integer>st=new Stack<>();
+        while(q.size()>0){
+            st.push(q.remove());
+        }
+        while(st.size()>0){
+            q.add(st.pop());
+        }
+        return q;
+    }
+	public static void main(String[] args) {
+		Queue<Integer>q=new LinkedList<>();
+		q.add(10);
+		q.add(20);
+		q.add(30);
+		q.add(40);
+		q.add(50);
+		TraversalInQueue(q);
+		System.out.println();
+		addAtIndex(q,3,25);
+		TraversalInQueue(q);
+		System.out.println();
+		PeekAtIndex(q,3);
+		System.out.println();
+		RemoveAtIndex(q,3);
+		System.out.println();
+		TraversalInQueue(q);
+		System.out.println();
+		System.out.println(ReverseAQueue(q));
+		/* Output:
+		         10 20 30 40 50
+		         10 20 30 25 40 50
+		         25
+		         Removed Element=25
+		         10 20 30 40 50
+		         [50,40,30,20,10]   
+		*/
+		
+	}
+}
