@@ -30,6 +30,14 @@
              3.Peek Element At particular index.
              4.Remove Element at particular index.
              5.Reverse a queue.
+# Queue via LinkedList
+             1.Add element to the end of the queue (Enqueue).
+             2.Remove element from the front of the queue (Dequeue).
+             3.Peek at the front element.
+             4.Get size.
+             5.Check if empty.
+             6.Display elements.
+             
 
 
 
