@@ -1,0 +1,20 @@
+import java.util.HashSet;
+public class Main
+{
+	public static void main(String[] args) {
+		HashSet<String>st=new HashSet<>();
+		st.add("Priya");
+		st.add("Saranya");
+		st.add("Priya");
+		System.out.println(st);//[Priya,Saranya]
+		System.out.println(st.contains("Priya"));// true 
+		System.out.println(st.size());// 2
+		st.remove("Priya");
+		System.out.println(st.contains("Priya"));// false
+		System.out.println(st.size());//1
+		st.add("Malar");
+		for(String s:st){
+		    System.out.print(s+" ");//Malar Saranya
+		}
+	}
+}
