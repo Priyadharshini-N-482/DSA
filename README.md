@@ -49,7 +49,11 @@
             2.Pop
             3.Peek
             4.Empty
-
+# Stack using Queue - Add Efficient approach/Pop & Peek Efficient approach 
+            1.Push
+            2.Pop
+            3.Peek
+            4.Empty
 
 
 
