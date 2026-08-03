@@ -54,7 +54,13 @@
             2.Pop
             3.Peek
             4.Empty
-
+# HashSet
+            1.Declaration.
+            2.Adding an Element to a Hashset.
+            3.Check if Hashset Contains a particular key.
+            4.size of Hashset.
+            5.Remove an element from the HashSet.
+            6.Traversing the HashSet.
 
 
 
