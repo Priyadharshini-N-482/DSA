@@ -39,7 +39,11 @@
              4.Get size.
              5.Check if empty.
              6.Display elements.
-             
+# Queue Implementation via Array
+             1.Add
+             2.Remove
+             3.Peek
+             4.Display
 
 
 
