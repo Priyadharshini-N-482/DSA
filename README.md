@@ -44,7 +44,7 @@
              2.Remove
              3.Peek
              4.Display
-# Queue using Stack
+# Queue using Stack - Push Efficient approach/Pop & Peek Efficient approach 
             1.Push
             2.Pop
             3.Peek
