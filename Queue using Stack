@@ -46,3 +46,43 @@ public class Main
 		System.out.println(q.peek());//20
 	}
 }
+// pop & peek efficient approach
+import java.util.Stack;
+public class Main
+{
+   static class MyQueue {
+    Stack<Integer>st=new Stack<>();
+    Stack<Integer>helper=new Stack<>();
+    public MyQueue() {
+        
+    }
+    public void push(int x) {
+        while(st.size()>0){
+            helper.push(st.pop());
+        }
+        st.push(x);
+        while(helper.size()>0){
+            st.push(helper.pop());
+        }  
+    }
+    public int pop() {
+     return st.pop();  
+    }
+    
+    public int peek() {
+        return st.peek();
+    }
+    
+    public boolean empty() {
+        return (st.size()==0);
+    }
+}
+	public static void main(String[] args) {
+		MyQueue q=new MyQueue();
+		q.push(10);q.push(20);q.push(30);
+		System.out.println(q.pop());//10
+		q.push(40);q.push(50);
+		System.out.println(q.peek());//20
+	}
+}
+
