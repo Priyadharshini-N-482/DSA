@@ -61,7 +61,9 @@
             4.size of Hashset.
             5.Remove an element from the HashSet.
             6.Traversing the HashSet.
-
+# MergeSort
+            1.MergeSort
+            2.Count Inversions(Geeks for Geeks)
 
 
 
