@@ -64,6 +64,9 @@
 # MergeSort
             1.MergeSort
             2.Count Inversions(Geeks for Geeks)
-
+# Heap
+            1.Heap-add,remove,peek,size
+            2.Kth-smallest element
+            3.kth-largest element
 
 
