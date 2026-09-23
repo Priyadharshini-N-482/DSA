@@ -68,5 +68,7 @@
             1.Heap-add,remove,peek,size
             2.Kth-smallest element
             3.kth-largest element
-
+# Overlapping Intervals
+            1.Merge Intervals LC-56
+            2.Insert Intervals LC-57
 
