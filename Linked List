@@ -1,0 +1,92 @@
+//---------------------------------BASIC PROBLEMS------------------------
+import java.util.*;
+class Node{
+        int data;
+        Node next;
+        Node (int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+public class Main
+{
+    
+	public static void main(String[] args) {
+	    //Create and print LL
+	    Scanner sc=new Scanner(System.in);
+		Node head = new Node(10);
+		Node a = new Node(20);
+		Node b= new Node(30);
+		Node c=new Node(40);
+		Node d=new Node(50);
+		head.next=a;
+		a.next=b;
+		b.next=c;
+		c.next=d;
+		int count=0;
+		int sum=0;
+		int found=0;
+		Node temp=head;
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		//Count the no of LL
+		    count++;
+		// sum of all nodes
+		    sum+=temp.data;
+		    temp=temp.next;
+		}
+		System.out.println("\n"+"No.of.Nodes="+count);
+		System.out.println("Sum of the Nodes="+sum);
+		// Search for an Element
+		System.out.println("Enter the element need to Search:");
+		int k=sc.nextInt();
+		temp =head;
+		while(temp!=null){
+		    if(temp.data==k)found=1;
+		    temp=temp.next;
+		}
+		if(found==1)System.out.println("Node found");
+		else System.out.println("Node Not found");
+		// Find the Maximum Element
+		int max=Integer.MIN_VALUE;
+		temp=head;
+		while(temp!=null){
+		    if(temp.data>max)max=Math.max(max,temp.data);
+		    temp=temp.next;
+		}
+		System.out.println("Maximum element="+max);
+		//Find the Minimum Element
+		int min=Integer.MAX_VALUE;
+		temp=head;
+		while(temp!=null){
+		    if(temp.data<min)min=Math.min(min,temp.data);
+		    temp=temp.next;
+		}
+		System.out.println("Manimum element="+min);
+		//Find the Length of a Linked List
+		System.out.println("Length of a Linked List="+count);
+		// Find the Middle Element
+		Node e=new Node(60);
+		d.next=e;
+		Node slow=head;
+		Node fast= head;
+		while(fast!=null && fast.next!=null){
+		    fast=fast.next.next;
+		    slow=slow.next;
+		}
+		System.out.println("Middle Element="+slow.data);
+		/****--- Result up to this----****
+		 10 20 30 40 50 
+No.of.Nodes=5
+Sum of the Nodes=150
+Enter the element need to Search:
+30
+Node found
+Maximum element=50
+Manimum element=10
+Length of a Linked List=5
+Middle Element=40
+***/
+
+	}
+}
