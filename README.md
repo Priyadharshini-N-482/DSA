@@ -71,4 +71,12 @@
 # Overlapping Intervals
             1.Merge Intervals LC-56
             2.Insert Intervals LC-57
-
+# Linked List
+           1.Create and Print a Linked List
+           2.Count the Number of Nodes
+           3.Find the Sum of All Nodes
+           4.Search for an Element
+           5.Find the Maximum Element
+           6.Find the Minimum Element
+           7.	Find the Middle Element
+           8.Find the Length of a Linked List
