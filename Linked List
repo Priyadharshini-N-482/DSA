@@ -90,7 +90,7 @@ Middle Element=40
 
 	}
 }
------------------------------Basic Operation---------------------------
+-----------------------------Basic Insert Operation---------------------------
 import java.util.*;
 class Node{
     int data;
@@ -181,6 +181,113 @@ Give Element thet need to insert at the ending=13
 After adding Elemnet at the end=12 1 2 3 4 5 13 
 Give Element and Position That need to insert=13 4 4
 After adding Elemnet at the 4 position=12 1 2 14 3 4 5 13 
+*/
+	}
+}
+-----------------Basic Deletion Operation------------------------
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+        }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter No.of Node:");
+		int n=sc.nextInt();
+		Node head=null;
+		Node temp=null;
+		System.out.println("Enter Elements:");
+		for(int i=0;i<n;i++){
+		    int m=sc.nextInt();
+		    Node nn=new Node(m);
+		    if(head==null){
+		        head=nn;
+		        temp=nn;
+		    }else{
+		        temp.next=nn;
+		        temp=nn;
+		    }
+		}
+		/*
+		System.out.println("Deleting First Node");
+		head=head.next;
+		temp=head;
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+Enter No.of Node:5
+Enter Elements:
+1
+2
+3
+4
+5
+Deleting First Node
+2 3 4 5 
+*/
+		/*
+		System.out.println("Deleting Last Node");
+		temp=head;
+		while(temp.next.next!=null){
+		    temp=temp.next;
+		}
+		temp.next=null;
+		temp=head;
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		/*
+Enter No.of Node:5
+Enter Elements:
+1
+2
+3
+4
+5
+Deleting Last Node
+1 2 3 4 
+		*/
+		/*
+		System.out.println("Deleting Node at Particular Position");
+		System.out.println("Enter Position to delete:");
+		int p=sc.nextInt();
+		if (head == null) {
+            System.out.println("List is empty. Nothing to delete.");
+        }
+        else if(p==1)head=head.next;
+        else {
+        int c=1;
+		temp=head;
+		while(temp!=null && c<p-1){
+		    c++;
+		    temp=temp.next;
+		}
+		temp.next=temp.next.next;
+        }
+		temp=head;
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+Enter No.of Node:5
+Enter Elements:
+1
+2
+3
+4
+5
+Deleting Node at Particular Position
+Enter Position to delete:
+4
+1 2 3 5 
 */
 	}
 }
