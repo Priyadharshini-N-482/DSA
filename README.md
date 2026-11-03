@@ -84,3 +84,6 @@
            9.Insert a Node at the Beginning
            10.Insert a Node at the End
            11.Insert a Node at a Given Position
+           12.Delete the First Node
+           13.Delete the Last Node
+           14.Delete a Node by Value
