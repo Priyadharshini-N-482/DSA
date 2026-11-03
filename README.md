@@ -80,3 +80,7 @@
            6.Find the Minimum Element
            7.Find the Middle Element
            8.Find the Length of a Linked List
+           Basic Operation:
+           9.Insert a Node at the Beginning
+           10.Insert a Node at the End
+           11.Insert a Node at a Given Position
