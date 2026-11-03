@@ -90,3 +90,97 @@ Middle Element=40
 
 	}
 }
+-----------------------------Basic Operation---------------------------
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node (int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+		Node head=new Node(1);
+		Node a=new Node(2);
+		Node b=new Node(3);
+		Node c=new Node(4);
+		Node d=new Node(5);
+		head.next=a;
+		a.next=b;
+		b.next=c;
+		c.next=d;
+		Node temp=head;
+		System.out.print("Linked List Elements=");
+		while(temp!=null){
+		   System.out.print(temp.data+" ");
+		   temp=temp.next;
+		}
+		System.out.println();
+		System.out.print("Give Element that need to insert at the starting=");
+		int k=sc.nextInt();
+		Node head1=new Node(k);
+	    head1.next=head;
+		temp=head1;
+		System.out.print("After adding Elemnet at the start=");
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		System.out.println();
+		System.out.print("Give Element thet need to insert at the ending=");
+		int k1=sc.nextInt();
+		Node e=new Node(k1);
+	    temp=head1;
+		while(temp.next!=null){
+		    temp=temp.next;
+		}
+		temp.next=e;
+		temp=head1;
+			System.out.print("After adding Elemnet at the end=");
+		    while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		System.out.println();
+		System.out.print("Give Element and Position That need to insert=");
+		int k2=sc.nextInt();
+		int p=sc.nextInt();
+		Node f=new Node(k2);
+		int count=1;
+		temp=head1;
+		if(p == 1) {
+    f.next = head1;
+    head1 = f;
+}else{
+		while(temp!=null && count<p-1){
+		    count++;
+		    temp=temp.next;
+		}
+		if(temp==null){
+		    System.out.print("Invalid position");
+		}else{
+		f.next=temp.next;
+		temp.next=f;
+		temp=head1;
+			System.out.print("After adding Elemnet at the "+p+" position=");
+		    while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		}
+}
+/*
+Linked List Elements=1 2 3 4 5 
+Give Element that need to insert at the starting=12
+After adding Elemnet at the start=12 1 2 3 4 5 
+Give Element thet need to insert at the ending=13
+After adding Elemnet at the end=12 1 2 3 4 5 13 
+Give Element and Position That need to insert=13 4 4
+After adding Elemnet at the 4 position=12 1 2 14 3 4 5 13 
+*/
+	}
+}
