@@ -309,4 +309,109 @@ Enter Position to delete:
 */
 	}
 }
+-----------------------------------------------------------------------------------
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter No of Nodes=");
+		int n=sc.nextInt();
+		Node head=null;
+		Node temp=null;
+		System.out.printf("Enter %d elements=",n);
+		for(int i=0;i<n;i++){
+		    int m=sc.nextInt();
+		    Node nn=new Node(m);
+		    if(head==null){
+		        head=nn;
+		        temp=nn;
+		    }else{
+		        temp.next=nn;
+		        temp=nn;
+		    }
+		}
+		temp=head;
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		System.out.println();
+		System.out.print("Enter Position:");
+		int p=sc.nextInt();
+		if(head==null||p<1)System.out.println("Invalid position"); 
+		else {
+    Node f=head;
+    Node s=head;
+
+    int i=0;
+    while(i<p && f!=null) {
+        f=f.next;
+        i++;
+    }
+
+    if(i<p) {
+        System.out.println("Invalid position");
+    }
+    else {
+        while(f!=null) {
+            f=f.next;
+            s=s.next;
+        }
+
+        System.out.printf("from last the %dth position value is=%d",p,s.data);
+    }
+}
+		
+		temp=head;
+		while(temp!=null && temp.next!=null){
+		    if(temp.data==temp.next.data){
+		        temp.next=temp.next.next;
+		    }else{
+		        temp=temp.next;
+		    }
+		}
+		
+		System.out.println("\n"+"Remove Duplicates from the sorted Linked List:");
+		temp=head;
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		System.out.println("\n"+"Reverse a Linked List");
+		Node prev=null;
+		 temp=head;
+		Node next=null;
+		while(temp!=null){
+		    next=temp.next;
+		    temp.next=prev;
+		    prev=temp;
+		    temp=next;
+		}
+		temp=prev;
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		/*
+Enter No of Nodes=5
+Enter 5 elements=1 2 2 3 4
+1 2 2 3 4 
+Enter Position:3
+from last the 3th position value is=2
+Remove Duplicates from the sorted Linked List:
+1 2 3 4 
+Reverse a Linked List
+4 3 2 1 
+*/
+	}
+}
 
