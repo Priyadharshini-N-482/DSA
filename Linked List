@@ -414,4 +414,50 @@ Reverse a Linked List
 */
 	}
 }
-
+-------------------------------------------------------------------------
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		Node head=null;
+		Node temp=null;
+		for(int i=0;i<n;i++){
+		    int m=sc.nextInt();
+		    Node nm=new Node(m);
+		    if(head==null){
+		        head=nm;
+		        temp=nm;
+		    }else{
+		        temp.next=nm;
+		        temp=nm;
+		    }
+		}
+		temp=head;
+		while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		int c=1;
+		System.out.println("Enter n for finding");
+		int p=sc.nextInt();
+		if(head==null||p<1)System.out.println("Not possible");
+		else{
+		temp=head;
+		while(temp!=null && c<p){
+	         c++;
+	         temp=temp.next;
+		}
+		if(temp==null)System.out.println("Invalid position");
+		else System.out.println(temp.data);
+	}
+}
