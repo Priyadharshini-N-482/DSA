@@ -87,3 +87,7 @@
            12.Delete the First Node
            13.Delete the Last Node
            14.Delete a Node by Value
+           15Find the Nth Node from the End
+           16.Remove Duplicates from a Sorted Linked List
+           17.Reverse a Linked List
+           18.Find the Nth node in a Linked List
