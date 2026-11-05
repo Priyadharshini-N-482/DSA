@@ -92,3 +92,5 @@
            17.Reverse a Linked List
            18.Find the Nth node in a Linked List
            19.Reverse a Linked List Recursively
+           20.Detect a Cycle in a Linked List
+           21.Find the Starting Node of a Cycle
