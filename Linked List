@@ -527,3 +527,78 @@ Reverse of the LL
 5 4 3 2 1 */
 	}
 }
+-------------------------------------------------------------
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+public class Main
+{
+     /*static boolean cycle(Node head){
+        Node s=head;
+        Node f=head;
+        while(f!=null&&f.next!=null){
+            f=f.next.next;
+            s=s.next;
+            if(f==s)return true;
+        }
+        return false;
+    }*/
+    static int cycle(Node head){
+        Node s=head;
+        Node f=head;
+        while(f!=null&&f.next!=null){
+            f=f.next.next;
+            s=s.next;
+            if(s==f){
+                s=head;
+                while(s!=f){
+                    s=s.next;
+                    f=f.next;
+                }
+                return s.data;
+            }
+            
+        }
+        return -1;
+    }
+	public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter No.of nodes:");
+        int n=sc.nextInt();
+        Node head=null;
+        Node temp=null;
+        System.out.println("Enter Node:");
+        for(int i=0;i<n;i++){
+            int m=sc.nextInt();
+            Node nn=new Node(m);
+            if(head==null){
+                head=nn;
+                temp=nn;
+            }else{
+                temp.next=nn;
+                temp=nn;
+            }
+        }
+        System.out.println("Enter Position that forms the cycle:");
+        int p=sc.nextInt();
+        Node c=head;
+        for(int i=1;i<p&&c!=null;i++){
+            c=c.next;
+        }
+        if(p>=1 && p<=n&&temp!=null&&c!=null){
+            temp.next=c;
+        }
+        /*if(cycle(head)){
+            System.out.println("Cycle detected");
+        }else{
+            System.out.println("Cycle not detected");
+        }*/
+        System.out.println("Cycle Start Position:"+cycle(head));
+	}
+}
