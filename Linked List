@@ -461,3 +461,69 @@ public class Main
 		else System.out.println(temp.data);
 	}
 }
+
+-----------------------Reverse a Linked List Recursively--------------
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+public class Main
+{
+    /*static void recursion(Node head){
+        if(head==null)return ;
+        recursion(head.next);
+        System.out.print(head.data);
+    }*/
+    static Node reverse(Node head) {
+    if(head == null || head.next == null) {
+        return head;
+    }
+
+    Node newHead = reverse(head.next);
+
+    head.next.next = head;
+    head.next = null;
+
+    return newHead;
+}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter no of nodes=");
+		int n=sc.nextInt();
+		System.out.println("Enter Element=");
+		Node head=null;
+		Node temp=null;
+		for(int i=0;i<n;i++){
+		    int m=sc.nextInt();
+		    Node nn=new Node(m);
+		    if(head==null){
+		        head=nn;
+		        temp=nn;
+		    }else{
+		        temp.next=nn;
+		        temp=nn;
+		    }
+		}
+		System.out.println("Reverse of the LL");
+		 temp=reverse(head);
+		 while(temp!=null){
+		    System.out.print(temp.data+" ");
+		    temp=temp.next;
+		}
+		/*
+		Enter no of nodes=5
+Enter Element=
+1
+2
+3
+4
+5
+Reverse of the LL
+5 4 3 2 1 */
+	}
+}
